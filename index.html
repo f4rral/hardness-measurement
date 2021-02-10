@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Измерение твердости по Бринеллю</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+    <header></header>
+
+    <main class="main-content">
+      <h1 class="heading-level-1">Измерение твердости по Бринеллю</h1>
+      
+      <section class="section section-hardness">
+        <form action="#" enctype="multipart/form-data" class="js-form-hardness">
+          <div class="row">
+            <fieldset class="subsection subsection-outer-shadow">
+              <legend class="heading-level-3">Категория материала</legend>
+
+              <ul class="fieldset-list">
+                <li class="item">
+                  <input type="radio" name="material" id="material_1" value="10" class="input-radio visuallyhidden">
+                  <label class="label-radio" for="material_1">
+                    Сталь, чугун, высокопрочные сплавы (на основе никеля, кобальта и др.). Твердость по Бринеллю до 140
+                  </label>
+                </li>
+
+                <li class="item">
+                  <input type="radio" name="material" id="material_2" value="30" class="input-radio visuallyhidden">
+                  <label class="label-radio" for="material_2">
+                    Сталь, чугун, высокопрочные сплавы (на основе никеля, кобальта и др.). Твердость по Бринеллю 140 и более
+                  </label>
+                </li>
+
+                <li class="item">
+                  <input type="radio" name="material" id="material_3" value="15" class="input-radio visuallyhidden">
+                  <label class="label-radio" for="material_3">
+                    Титан и сплавы на его основе. Твердость по Бринеллю от 50
+                  </label>
+                </li>
+
+                <li class="item">
+                  <input type="radio" name="material" id="material_4" value="5" class="input-radio visuallyhidden">
+                  <label class="label-radio" for="material_4">
+                    Медь и сплавы на ее основе, легкие металлы и их сплавы. Твердость по Бринеллю менее 35
+                  </label>
+                </li>
+
+                <li class="item">
+                  <input type="radio" name="material" id="material_5" value="10" class="input-radio visuallyhidden">
+                  <label class="label-radio" for="material_5">
+                    Медь и сплавы на ее основе, легкие металлы и их сплавы. Твердость по Бринеллю от 35
+                  </label><br>
+                </li>
+
+                <li class="item">
+                  <input type="radio" name="material" id="material_6" value="2.5" class="input-radio visuallyhidden">
+                  <label class="label-radio" for="material_6">
+                    Подшипниковые сплавы. Твердость по Бринеллю от 8 до 50
+                  </label>
+                </li>
+
+                <li class="item">
+                  <input type="radio" name="material" id="material_7" value="1" class="input-radio visuallyhidden">
+                  <label class="label-radio" for="material_7">
+                    Свинец, олово и другие мягкие металлы. Твердость по Бринеллю до 20
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+    
+            <fieldset class="subsection subsection-outer-shadow">
+              <legend class="heading-level-3">Твердость по Бринеллю НВ, HBW</legend>
+
+              <ul class="fieldset-list">
+                <li class="item">
+                  <input type="radio" name="hardness" id="hardness_1" class="input-radio visuallyhidden" value="180">
+                  <label class="label-radio" for="hardness_1">До 10</label>
+                </li>
+
+                <li class="item">
+                  <input type="radio" name="hardness" id="hardness_2" class="input-radio visuallyhidden" value="120">
+                  <label class="label-radio" for="hardness_2">Свыше 10 до 35</label>
+                </li>
+
+                <li class="item">
+                  <input type="radio" name="hardness" id="hardness_3" class="input-radio visuallyhidden" value="30">
+                  <label class="label-radio" for="hardness_3">Свыше 35 до 100</label>
+                </li>
+
+                <li class="item">
+                  <input type="radio" name="hardness" id="hardness_4" class="input-radio visuallyhidden" value="10-15">
+                  <label class="label-radio" for="hardness_4">Свыше 100</label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+          
+          <div class="row">
+            <figure class="image subsection subsection-outer-shadow">
+              <img src="img/draw-brinell-test_ru.png" alt="Схема измерения твердости по Бринеллю" width="285" height="372">
+              <figcaption>Схема измерения твердости по Бринеллю</figcaption>
+            </figure>
+            
+            <div class="fieldset-group">
+              <fieldset class="subsection subsection-outer-shadow">
+                <legend class="heading-level-3">Параметры замера</legend>
+  
+                <ul class="fieldset-list">
+                  <li class="item item-between">
+                    <label class="label weight-midd" for="materialDesignation">Марка материала</label>
+                    <input class="weight-midd input-material-designation" type="text" id="materialDesignation" placeholder="15Х18Н12СЧТЮ">
+                  </li>
+    
+                  <li class="item item-between">
+                    <span class="label weight-midd">Коэффициент K</span>
+                    <span class="weight-midd js-coef-k">-</span>
+                  </li>
+    
+                  <li class="item item-between">
+                    <label class="label weight-midd" for="diaBall">Диаметр шарика D, мм</label>
+                    <select class="weight-midd select-dia-ball js-dia-ball" id="diaBall" name="diaBall">
+                      <option value="null">-</option>
+                    </select>
+                  </li>
+    
+                  <li class="item item-between">
+                    <span class="label weight-midd">Усилие F, кгс</span>
+                    <span class="weight-midd js-force">-</span>
+                  </li>
+    
+                  <li class="item item-between">
+                    <span class="label weight-midd">Время выдержки, сек</span>
+                    <span class="weight-midd js-hold-time">-</span>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <fieldset class="subsection subsection-outer-shadow">
+                <legend class="heading-level-3">Результат замера</legend>
+
+                <ul class="fieldset-list">
+                  <li class="item item-between">
+                    <label class="label weight-midd" for="dia1">Размер отпечатка d<sub>1</sub>, мм</label>
+                    <input class="input-text weight-midd input-dia" type="number" name="dia1" id="dia1" step="0.001" placeholder="мм">
+                  </li>
+    
+                  <li class="item item-between">
+                    <label class="label weight-midd" for="dia2">Размер отпечатка d<sub>2</sub>, мм</label>
+                    <input class="input-text weight-midd input-dia" type="number" name="dia2" id="dia2" step="0.001" placeholder="мм">
+                  </li>
+                  
+                  <li class="item item-between">
+                    <span class="label weight-high">Твердость, HB</span>
+                    <span class="weight-high js-hardness">-</span>
+                  </li>
+                </ul>
+              </fieldset>
+            </div>
+            
+          </div>
+        </form>
+      </section>
+      
+      <section class="subsection subsection-outer-shadow section-info">
+        <h2 class="heading-level-3">Справка</h2>
+        <p>
+          <span class="text-weight-midd">Твердость</span> — свойство материала оказывать сопротивление упругой и пластической 
+          деформации или разрушению при внедрении в поверхностный слой материала другого, 
+          более твердого и не получающего остаточной деформации тела - индентора.
+        </p>
+
+        <p>
+          <span class="text-weight-midd">Твердость по Бринеллю (HB),</span> метод основан на том, что в плоскую поверхность под 
+          нагрузкой внедряют стальной шарик. Число твердости НВ определяется отношением 
+          нагрузки к сферической поверхности отпечатка.
+        </p>
+
+        <p>
+          Методика измерения твердости изложена в 
+          <a class="link" href="pdf/gost-9012-59.pdf" target="_blank">
+            ГОСТ 9012-59 Металлы. Метод измерения твердости по Бринеллю
+          </a>
+        </p>  
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
